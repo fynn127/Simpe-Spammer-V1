@@ -7,3 +7,5 @@ requests
 time (for older versions of python)
 threading (for older versions of python)
 json (if python dosent come with it pre installed)
+
+Join my discord!: https://discord.gg/BTXFMqKSN3
