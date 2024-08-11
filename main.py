@@ -62,7 +62,8 @@ file_path = os.path.join(script_directory, 'response_data.json')
 
 with open(file_path, 'w') as json_file:
     json.dump(data, json_file, indent=4)
-Write.Print(f"Data has been written to {file_path}\n", Colors.red_to_yellow, interval=0.0035)
+Write.Print(f"Data has been written to {file_path}\n", Colors.red_to_purple, interval=0.0035)
+time.sleep(2)
 Write.Print("Starting..\n", Colors.red_to_purple, interval=0.0025)
 time.sleep(2)
 
@@ -72,9 +73,9 @@ def ss1():
     while True:
         request_number += 1
         if response.status_code == 200:
-            print(f"{alr.WHITE}({alr.GREEN}~{alr.WHITE}) -> {alr.LIGHTMAGENTA_EX}Request -> {alr.MAGENTA}{request_number}{alr.MAGENTA} -> Packet Sent {alr.LIGHTCYAN_EX} |  {alr.GREEN}Code: {response.status_code}")
+            print(f"{alr.WHITE}({alr.GREEN}~{alr.WHITE}) -> {alr.LIGHTMAGENTA_EX}Request -> {alr.MAGENTA}{request_number}{alr.LIGHTMAGENTA_EX} -> Sent To -> {alr.MAGENTA}{response.url}{alr.LIGHTCYAN_EX} |  {alr.GREEN}Code: {response.status_code}")
         elif response.status_code != 200:
-            print(f"{alr.WHITE}({alr.RED}-{alr.WHITE}) -> {alr.LIGHTMAGENTA_EX}Request -> {alr.MAGENTA}{request_number}{alr.MAGENTA} -> Packet Failed To Send {alr.LIGHTCYAN_EX} |  {alr.RED}Code: {response.status_code}")
+            print(f"{alr.WHITE}({alr.RED}-{alr.WHITE}) -> {alr.LIGHTMAGENTA_EX}Request -> {alr.MAGENTA}{request_number}{alr.LIGHTMAGENTA_EX} -> Packet Failed To Send To {alr.MAGENTA}{response.url}{alr.LIGHTCYAN_EX} |  {alr.RED}Code: {response.status_code}")
 
 threds = []
 
